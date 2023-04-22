@@ -8,3 +8,7 @@ If any new tenancy comes with the existing property, make the neccessary changes
 It any tenancy ends, select that row, go to 'My Macros' in taskbar, look for 'Tenant payments' and select 'Move Out'. It helps to keep a track of ending tenancy.
 If any new property comes, look for 'Property details' in 'My macros'. Select propety address, landlord names and tenant names through combo box. Which extracts data from 'All property Detials' folder.  
 At the end of month, add a new sheet, copy all data from previous sheet and past it into new sheet. Rename with exist month's name. Then press 'Reset' from 'Tenant payment' tab. It resests your entire sheet with all saved changes.
+
+<br>
+Please remeber i always write my macros and add form in my Personal Workbook.Then I add those macros into my ribbion so it can be applicable for any excel sheet.
+Kindly see the video for better understanding.
