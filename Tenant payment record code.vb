@@ -403,3 +403,43 @@ End Function
 
 
 End Function
+
+'===========================================================
+' Select multiple rows and fill the colour according to its value
+'=============================================================                           
+   
+                          
+    Sub RentPaidCheckBoxes()
+    Dim ws As Worksheet
+    Dim cb As CheckBox
+    Dim statusCell As Range
+    Dim rowNum As Long
+    Dim val As Variant
+    Dim fillRange As Range
+
+    Set ws = ActiveSheet
+
+    For Each cb In ws.CheckBoxes
+        rowNum = cb.TopLeftCell.Row
+        Set statusCell = ws.Cells(rowNum, 8) ' Column C = Rent status
+
+        val = Trim(statusCell.Value)
+        Set fillRange = ws.Range("A" & rowNum & ":I" & rowNum) ' Only columns A to F
+
+        If LCase(val) = "full" Then
+            cb.Value = xlOn
+            'fillRange.Interior.Color = RGB(144, 238, 144)  ' Light Green
+            fillRange.Interior.Color = 6750156
+        ElseIf IsNumeric(val) Then
+            cb.Value = xlOn
+            'fillRange.Interior.Color = RGB(173, 216, 230) ' Light Blue
+            fillRange.Interior.Color = 39423
+        Else
+            cb.Value = xlOff
+            fillRange.Interior.ColorIndex = xlColorIndexNone ' Clear fill only A:F
+        End If
+    Next cb
+    
+End Sub
+
+
