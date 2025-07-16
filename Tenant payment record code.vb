@@ -1,4 +1,4 @@
- Option Explicit
+Option Explicit
 Dim MCells As Variant
 Dim JCells As Variant
 Dim RCells As Variant
@@ -20,14 +20,14 @@ Response = MsgBox("Do you want to reset?", vbYesNo + vbCritical)
    ' Clear the sheet and contents
    '=============================
      
-   ActiveSheet.Range("A2:H1020").Select
+   ActiveSheet.Range("A2:I1020").Select
         With Selection.Interior
             .Pattern = xlNone
             .TintAndShade = 0
             .PatternTintAndShade = 0
         End With
     
-    ActiveSheet.Range("F2:H1020").Select
+    ActiveSheet.Range("G2:H1020").Select
     With Selection
         .ClearContents
     End With
@@ -135,7 +135,7 @@ End Sub
 
 Sub MoveOut_Code()
 
-ActiveSheet.Range(ActiveCell, ActiveCell.Offset(, 7)).Select
+ActiveSheet.Range(ActiveCell, ActiveCell.Offset(, 8)).Select
 
  With Selection.Interior
         .Pattern = xlSolid
@@ -147,7 +147,7 @@ ActiveSheet.Range(ActiveCell, ActiveCell.Offset(, 7)).Select
 End Sub
 Sub BlueLine_Code()
 
-   Range(ActiveCell, ActiveCell.Offset(, 7)).Select
+   Range(ActiveCell, ActiveCell.Offset(, 8)).Select
    
    With Selection.Font
        .Bold = True
@@ -175,18 +175,18 @@ Sub BlueLine_Code()
    
    ActiveCell.Value = "Due"
    ActiveCell.Offset(, 1).Value = "Address"
-  'ActiveCell.Offset(, 2).Value = "Landlord"
-   ActiveCell.Offset(, 2).Value = "Name"
-   ActiveCell.Offset(, 3).Value = "Rent"
-   ActiveCell.Offset(, 4).Value = "Payment"
-   ActiveCell.Offset(, 5).Value = "Date"
-   ActiveCell.Offset(, 6).Value = "Amt.Paid"
-   ActiveCell.Offset(, 7).Value = "Recd."
+   ActiveCell.Offset(, 2).Value = "Landlord"
+   ActiveCell.Offset(, 3).Value = "Name"
+   ActiveCell.Offset(, 4).Value = "Rent"
+   ActiveCell.Offset(, 5).Value = "Payment"
+   ActiveCell.Offset(, 6).Value = "Date"
+   ActiveCell.Offset(, 7).Value = "Amt.Paid"
+   ActiveCell.Offset(, 8).Value = "Recd."
    
 End Sub
 Sub NewChanges_Code()
 
-ActiveSheet.Range(ActiveCell, ActiveCell.Offset(, 7)).Select
+ActiveSheet.Range(ActiveCell, ActiveCell.Offset(, 8)).Select
 
  With Selection.Interior
         .Pattern = xlSolid
@@ -341,7 +341,7 @@ Sub RentPaid_Code()
       
            MsgBox ("Full rent has been paid.")
            
-           Range(ActiveCell, ActiveCell.Offset(, -6)).Select
+           Range(ActiveCell, ActiveCell.Offset(, -7)).Select
            
            With Selection.Interior
           .Pattern = xlSolid
@@ -352,7 +352,7 @@ Sub RentPaid_Code()
           End With
          
          
-         ActiveCell.Offset(, 7).Select
+         ActiveCell.Offset(, 8).Select
          With Selection.Interior
           .Pattern = xlSolid
           .PatternColorIndex = xlAutomatic
@@ -364,7 +364,7 @@ Sub RentPaid_Code()
           
         MsgBox ("Balance is due.")
           
-        Range(ActiveCell, ActiveCell.Offset(, -6)).Select
+        Range(ActiveCell, ActiveCell.Offset(, -7)).Select
         
         With Selection.Interior
         .Pattern = xlSolid
@@ -374,7 +374,7 @@ Sub RentPaid_Code()
         .PatternTintAndShade = 0
         End With
         
-        ActiveCell.Offset(, 7).Select
+        ActiveCell.Offset(, 8).Select
         With Selection.Interior
         .Pattern = xlSolid
         .PatternColorIndex = xlAutomatic
@@ -396,6 +396,10 @@ Private Function CheckCell(CellValue) As Boolean
   Else
      CheckCell = True
   End If
+
+
+End Function
+
 
 
 End Function
